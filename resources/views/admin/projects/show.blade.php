@@ -15,12 +15,12 @@
       </div>
       <div class="col-8">
           <div class="row g-4">
-              <div class="col-12"><strong>{{$project->name}}</strong></div>
+              <div class="col-6"><strong>Name: </strong> {{$project->name}}</div>
+              <div class="col-6"><strong>Type: </strong>{!! $project->getTypeBadge() !!}</div>
               <div class="col-12"><strong>Description: </strong> {{$project->description}}</div>
-              <div class="col-3"><strong>Name Repo: </strong>{{$project->name_repo}}</div>
-              <div class="col-3"><strong>Slug: </strong>{{$project->slug}}</div>
-              <div class="col-3"><strong>Created at: </strong>{{$project->created_at}}</div>
-              <div class="col-3"><strong>Updated at: </strong>{{$project->updated_at}}</div>
+              <div class="col-12"><strong>Link repository: </strong>{{$project->name_repo}}</div>
+              <div class="col-4"><strong>Created at: </strong>{{$project->created_at}}</div>
+              <div class="col-4"><strong>Updated at: </strong>{{$project->updated_at}}</div>
           </div>
       </div>
   </div>

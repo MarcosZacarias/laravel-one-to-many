@@ -17,10 +17,8 @@
     <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
         @forelse ($projects as $project)
         <div class="col">
-          <div class="card h-100" 
-          {{-- style={{$project->getTypeColor()}} --}}
-          >
-            <div class="card-header">              
+          <div class="card h-100">
+            <div class="card-header" style={{$project->getTypeColor()}}>              
               @if ($project->type)
               <strong>Type: </strong> {{$project->type?->label}}                  
               @else
