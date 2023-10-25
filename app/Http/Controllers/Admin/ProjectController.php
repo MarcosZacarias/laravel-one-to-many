@@ -9,6 +9,8 @@ use App\Models\Project;
 use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Str;
+
 
 
 class ProjectController extends Controller
@@ -20,7 +22,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(8);
+        $projects = Project::orderBy('id', 'desc')->paginate(8);
         return view("admin.projects.index", compact("projects"));
     }
 
@@ -46,6 +48,7 @@ class ProjectController extends Controller
         $data = $request->validated();
         $project = new Project;
         $project->fill($data);
+        $project->slug = Str::slug($project->name);
         $project->save();
         return redirect()->route('admin.projects.show', $project);
     }

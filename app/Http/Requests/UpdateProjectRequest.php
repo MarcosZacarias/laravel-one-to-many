@@ -28,6 +28,7 @@ class UpdateProjectRequest extends FormRequest
             'name_repo'=>'required|string',
             'img_path'=>'required|string|url',
             'description'=>'nullable|string',
+            'type_id'=> 'nullable|exists:types,id',
         ];
     }
 
@@ -46,6 +47,9 @@ class UpdateProjectRequest extends FormRequest
             'img_path.url' => 'The image path must be a URI',
 
             'description.string'=> 'The description must be a string',
+
+            'type_id.exists'=> 'The type entered is invalid',
+
         ];
     } 
 }
