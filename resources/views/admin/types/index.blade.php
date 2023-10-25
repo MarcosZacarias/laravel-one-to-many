@@ -9,6 +9,11 @@
 @section('content')
 <div class="container">
     <h1>List types</h1>
+
+    <a href="{{ route('admin.types.create') }}" class="">
+        <button class="btn btn-outline-primary mb-3">Create new type</button>
+    </a>
+
     <table class="table w-50">
         <thead>
           <tr>
@@ -47,7 +52,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
                           <div class="modal-body">
-                            Are you sure you want to eliminate the type <strong>"{{$type->name}}"</strong>
+                            Are you sure you want to eliminate the type <strong>"{{$type->label}}"</strong>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
