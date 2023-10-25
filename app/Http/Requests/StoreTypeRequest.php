@@ -24,7 +24,7 @@ class StoreTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            'label'=> 'required|string|max:25|unique:projects,name,' . $this->type->label,
+            'label'=> 'required|string|max:25',
             'color'=> [
                 'required',
                 'regex:/^#([a-f0-9]{6}|[a-f0-9]{3})$/i'
