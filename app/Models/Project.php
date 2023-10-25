@@ -20,4 +20,8 @@ class Project extends Model
     public function type(){
         return $this->belongsTo(Type::class);
     }
+
+    public function getTypeColor(){
+        return $this->type ? "background-color:{$this->type->color}" : "background-color: #FFFFFF";
+    }
 }
