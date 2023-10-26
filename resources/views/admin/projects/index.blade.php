@@ -18,6 +18,7 @@
         @forelse ($projects as $project)
         <div class="col">
           <div class="card h-100">
+            <img src="{{$project->img_path}}" class="card-img-top" alt="...">
             <div class="card-header" style={{$project->getTypeColor()}}>              
               @if ($project->type)
               <strong>Type: </strong> {{$project->type?->label}}                  
@@ -25,7 +26,6 @@
               untyped
               @endif
             </div>          
-            <img src="{{$project->img_path}}" class="card-img-top" alt="...">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">
                 <strong>Project Name: </strong> {{$project->name}}
